@@ -2,16 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { services } from "../data/services";
 
-// ────────────────────────────────────────────────────────────────
-// Web3Forms — gratis formulierverwerking, geen eigen backend nodig.
-// 1. Ga naar https://web3forms.com en vul edwin@geborgdadvies.nl in.
-// 2. Kopieer de access key uit de mail en plak die hieronder.
-// Zonder geldige key komt er nog geen bericht binnen.
-// ────────────────────────────────────────────────────────────────
-const WEB3FORMS_KEY = "8da5e799-9d31-4341-b746-02a6e4b1847a";
-
-// Absolute redirect-URL voor bezoekers zonder JavaScript.
-const bedanktUrl = new URL("/bedankt", Astro.site ?? "https://www.geborgdadvies.nl").href;
+// Het formulier post naar de eigen PHP-handler (public/contact.php),
+// die via SMTP mailt naar edwin@geborgdadvies.nl.
 
 const details = [
   {
@@ -107,24 +99,14 @@ const details = [
           class="mt-8 space-y-5"
           name="contact"
           method="POST"
-          action="https://api.web3forms.com/submit"
+          action="/contact.php"
         >
-          <!-- Web3Forms configuratie -->
-          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-          <input type="hidden" name="subject" value="Nieuw bericht via geborgdadvies.nl" />
-          <input type="hidden" name="from_name" value="Website Geborgd Advies" />
-          <!-- Fallback-redirect voor bezoekers zonder JavaScript -->
-          <input type="hidden" name="redirect" value={bedanktUrl} />
-          <!-- Honeypot tegen spam: door mensen onzichtbaar -->
-          <input
-            type="checkbox"
-            name="botcheck"
-            class="hidden"
-            style="display:none"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-          />
+          <!-- Honeypot tegen spam: door mensen onzichtbaar, door bots vaak ingevuld -->
+          <div class="hidden" aria-hidden="true">
+            <label>Laat dit veld leeg
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
 
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
@@ -226,7 +208,7 @@ const details = [
             status?.classList.add("hidden");
 
             try {
-              const res = await fetch("https://api.web3forms.com/submit", {
+              const res = await fetch("/contact.php", {
                 method: "POST",
                 headers: { Accept: "application/json" },
                 body: data,

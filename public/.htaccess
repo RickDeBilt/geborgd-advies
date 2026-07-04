@@ -4,6 +4,12 @@
 # Nette 404-pagina
 ErrorDocument 404 /404.html
 
+# Beveiliging: blokkeer toegang tot config met inloggegevens
+# (extra vangnet mocht private/ per ongeluk in de webroot staan)
+<FilesMatch "contact-config\.php$">
+  Require all denied
+</FilesMatch>
+
 # GZIP-compressie
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
