@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Pagina niet gevonden"
+  description="Deze pagina bestaat niet of is verplaatst."
+  path="/404"
+>
+  <section class="container-x flex min-h-[60vh] items-center py-20 md:py-28">
+    <div class="mx-auto max-w-xl text-center">
+      <p class="text-sm font-semibold tracking-wider text-accent-hover uppercase">Foutmelding 404</p>
+      <h1 class="mt-4 text-3xl font-semibold tracking-tight text-primary md:text-4xl">
+        Deze pagina konden we niet vinden
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-muted">
+        Mogelijk is de pagina verplaatst of bestaat het adres niet meer. Ga terug
+        naar de homepagina of bekijk direct de diensten.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+        >
+          Terug naar home
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center rounded-full border border-border px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-surface"
+        >
+          Contact opnemen
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

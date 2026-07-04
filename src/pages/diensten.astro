@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import CTASection from "../components/CTASection.astro";
+import { services, iconPaths } from "../data/services";
+---
+
+<BaseLayout
+  title="Diensten"
+  description="Financiële administratie, bank- en giroverwerking, financieel inzicht, backoffice ondersteuning, beleidsstukken, HR-documentatie en begeleiding bij WIA/IVA-trajecten."
+  path="/diensten"
+>
+  <Hero
+    eyebrow="Diensten"
+    title="Ondersteuning die met uw organisatie meebeweegt"
+    subtitle="Van financiële administratie tot HR-documentatie en begeleiding bij WIA/IVA-trajecten. U kiest de ondersteuning die past bij uw onderneming."
+    secondaryCta={{ href: "/werkwijze", label: "Zo werken we" }}
+  />
+
+  <!-- Snelnavigatie -->
+  <nav class="border-b border-border bg-surface" aria-label="Diensten">
+    <ul class="container-x flex flex-wrap gap-x-6 gap-y-2 py-4 text-sm">
+      {services.map((service) => (
+        <li>
+          <a href={`#${service.id}`} class="font-medium text-muted transition-colors hover:text-primary">
+            {service.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="container-x py-16 md:py-20">
+    <div class="grid gap-6 lg:grid-cols-2">
+      {services.map((service) => (
+        <article
+          id={service.id}
+          class="flex scroll-mt-28 flex-col rounded-2xl border border-border bg-surface p-8"
+        >
+          <span class="grid h-12 w-12 place-items-center rounded-xl bg-accent-soft text-primary">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true">
+              <path d={iconPaths[service.icon]} stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2 class="mt-5 text-2xl font-semibold tracking-tight text-primary">{service.title}</h2>
+          <p class="mt-3 leading-relaxed text-muted">{service.description}</p>
+          <ul class="mt-6 space-y-3 border-t border-border pt-6">
+            {service.points.map((point) => (
+              <li class="flex gap-3 text-sm text-text">
+                <svg viewBox="0 0 20 20" fill="none" class="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true">
+                  <path d="m5 10 3.5 3.5L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+
+    <!-- Juridische nuance, transparant vermeld -->
+    <p class="mx-auto mt-12 max-w-3xl text-center text-sm leading-relaxed text-muted">
+      Geborgd Advies levert financieel-administratieve ondersteuning en ondersteuning
+      bij accountancywerkzaamheden. Wij treden niet op als registeraccountant of
+      accountant-administratieconsulent; wettelijke accountantscontroles voert uw
+      eigen accountant uit.
+    </p>
+  </div>
+
+  <CTASection
+    title="Niet zeker welke ondersteuning u nodig heeft?"
+    text="In een vrijblijvend gesprek kijken we samen waar de meeste winst voor uw organisatie zit."
+  />
+</BaseLayout>

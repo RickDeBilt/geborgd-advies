@@ -1,0 +1,25 @@
+---
+interface Props {
+  items?: { value: string; label: string }[];
+}
+
+const {
+  items = [
+    { value: "Persoonlijk", label: "Vast aanspreekpunt" },
+    { value: "Onafhankelijk", label: "Uw belang voorop" },
+    { value: "Flexibel", label: "Op maat inzetbaar" },
+    { value: "Discreet", label: "Zorgvuldig met uw gegevens" },
+  ],
+} = Astro.props;
+---
+
+<section class="border-y border-border bg-surface">
+  <div class="container-x grid grid-cols-2 gap-x-6 gap-y-8 py-10 md:grid-cols-4">
+    {items.map((item) => (
+      <div class="text-center">
+        <div class="text-lg font-semibold tracking-tight text-primary md:text-xl">{item.value}</div>
+        <div class="mt-1 text-sm text-muted">{item.label}</div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+  cta?: { href: string; label: string };
+}
+
+const {
+  title = "Klaar om uw administratie uit handen te geven?",
+  text = "Plan een vrijblijvende kennismaking. In een kort gesprek bekijken we samen waar Geborgd Advies u kan ontzorgen.",
+  cta = { href: "/contact", label: "Plan een kennismaking" },
+} = Astro.props;
+---
+
+<section class="container-x py-20 md:py-24">
+  <div class="relative overflow-hidden rounded-[1.75rem] bg-primary px-8 py-14 text-center md:px-16 md:py-20">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -top-16 right-[-5%] h-64 w-64 rounded-full bg-accent/15 blur-3xl"></div>
+      <div class="absolute -bottom-20 left-[-5%] h-64 w-64 rounded-full bg-primary-soft/70 blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-2xl">
+      <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">{title}</h2>
+      <p class="mt-4 text-lg leading-relaxed text-white/75">{text}</p>
+      <a
+        href={cta.href}
+        class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-accent-hover"
+      >
+        {cta.label}
+        <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4" aria-hidden="true">
+          <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

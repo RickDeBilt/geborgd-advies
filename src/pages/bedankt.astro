@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Bedankt voor uw bericht"
+  description="Uw bericht is verzonden. Geborgd Advies neemt zo snel mogelijk contact met u op."
+  path="/bedankt"
+>
+  <section class="container-x flex min-h-[60vh] items-center py-20 md:py-28">
+    <div class="mx-auto max-w-xl text-center">
+      <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent-soft text-primary">
+        <svg viewBox="0 0 24 24" fill="none" class="h-8 w-8" aria-hidden="true">
+          <path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <h1 class="mt-8 text-3xl font-semibold tracking-tight text-primary md:text-4xl">
+        Bedankt voor uw bericht
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-muted">
+        Uw bericht is goed ontvangen. Ik neem zo snel mogelijk — doorgaans binnen
+        één werkdag — persoonlijk contact met u op.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+        >
+          Terug naar home
+        </a>
+        <a
+          href="/diensten"
+          class="inline-flex items-center justify-center rounded-full border border-border px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-surface"
+        >
+          Bekijk de diensten
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

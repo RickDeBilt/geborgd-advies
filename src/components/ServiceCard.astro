@@ -1,0 +1,31 @@
+---
+import { iconPaths, type IconName } from "../data/services";
+
+interface Props {
+  title: string;
+  summary: string;
+  icon: IconName;
+  href?: string;
+}
+
+const { title, summary, icon, href = "/diensten" } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative flex flex-col rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-accent/60"
+>
+  <span class="grid h-12 w-12 place-items-center rounded-xl bg-accent-soft text-primary transition-colors group-hover:bg-primary group-hover:text-accent">
+    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true">
+      <path d={iconPaths[icon]} stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </span>
+  <h3 class="mt-5 text-lg font-semibold tracking-tight text-primary">{title}</h3>
+  <p class="mt-2.5 flex-1 text-sm leading-relaxed text-muted">{summary}</p>
+  <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+    Meer over deze dienst
+    <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+      <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </span>
+</a>

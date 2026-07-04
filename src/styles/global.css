@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Geborgd Advies — Design System
+   Rustig, betrouwbaar, premium. Donkerblauw/grafiet + zacht zand.
+--------------------------------------------------------------- */
+@theme {
+  /* Basiskleuren (uit briefing) */
+  --color-bg: #f7f4ee;
+  --color-surface: #ffffff;
+  --color-text: #1f2933;
+  --color-muted: #667085;
+  --color-primary: #172033;
+  --color-accent: #b89b5e;
+  --color-border: #e5e0d6;
+
+  /* Afgeleide tinten voor states & vlakken */
+  --color-primary-hover: #26324f;
+  --color-primary-soft: #2c3852;
+  --color-accent-hover: #a2864b;
+  --color-accent-soft: #efe8d6;
+
+  /* Typografie — één heldere, snelle typefamilie */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+  /* Ruimte & radius */
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.125rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Toegankelijke focus-stijl */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2rem;
+    }
+  }
+}
