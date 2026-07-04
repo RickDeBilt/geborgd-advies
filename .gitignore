@@ -24,4 +24,6 @@ pnpm-debug.log*
 .idea/
 
 # private serverconfig met inloggegevens — NOOIT committen
-/private/
+# (het .example-bestand mag wél in git)
+/private/*
+!/private/contact-config.example.php
