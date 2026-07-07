@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getPublishedArticles } from "../../utils/articles";
+
+const articles = await getPublishedArticles();
+
+// Uitgelicht: eerste featured artikel, anders het nieuwste.
+const featured = articles.find((a) => a.data.featured) ?? articles[0];
+const rest = articles.filter((a) => a.id !== featured?.id);
+
+const site = Astro.site ?? new URL("https://www.geborgdadvies.nl");
+const breadcrumbList = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.href },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Actueel",
+      item: new URL("/actueel/", site).href,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Actueel & inzicht"
+  description="Praktische uitleg over financiële, administratieve en personele ontwikkelingen die relevant zijn voor zzp'ers en mkb-ondernemers. Geborgd Advies vertaalt veranderingen naar heldere informatie."
+  path="/actueel/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} />
+  </Fragment>
+
+  <!-- Intro -->
+  <section class="bg-primary text-white">
+    <div class="container-x py-16 md:py-20">
+      <nav aria-label="Kruimelpad" class="text-sm text-white/50">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="transition-colors hover:text-accent">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-white/80" aria-current="page">Actueel</li>
+        </ol>
+      </nav>
+      <div class="mt-6 max-w-2xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium tracking-wide text-accent uppercase">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+          Actueel
+        </p>
+        <h1 class="mt-6 text-4xl leading-[1.1] font-semibold tracking-tight md:text-5xl">
+          Actueel &amp; inzicht
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-white/75">
+          Ontwikkelingen op het gebied van financiën, personeel en wetgeving volgen
+          elkaar snel op. Geborgd Advies vertaalt relevante veranderingen naar
+          duidelijke en praktische informatie voor ondernemers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {
+    articles.length === 0 ? (
+      /* Nette lege status */
+      <section class="container-x py-20 md:py-28">
+        <div class="mx-auto max-w-md rounded-2xl border border-border bg-surface p-10 text-center">
+          <span class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-accent-soft text-primary">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true">
+              <path d="M6 3h8l4 4v14H6V3Zm8 0v4h4M9 12h6m-6 3h6m-6-6h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2 class="mt-5 text-lg font-semibold tracking-tight text-primary">
+            Nog geen artikelen
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Er zijn op dit moment nog geen artikelen gepubliceerd. Kom binnenkort
+            terug voor nieuwe inzichten, of neem gerust contact met ons op.
+          </p>
+          <a
+            href="/contact/"
+            class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+          >
+            Neem contact op
+          </a>
+        </div>
+      </section>
+    ) : (
+      <div class="container-x py-16 md:py-20">
+        {/* Uitgelicht artikel */}
+        {featured && (
+          <section aria-labelledby="uitgelicht" class="mb-16">
+            <div class="mb-6 flex items-center gap-2">
+              <span class="h-px w-6 bg-accent"></span>
+              <h2 id="uitgelicht" class="text-xs font-semibold tracking-wider text-accent-hover uppercase">
+                Uitgelicht
+              </h2>
+            </div>
+            <ArticleCard article={featured} featured loading="eager" />
+          </section>
+        )}
+
+        {/* Raster met overige artikelen */}
+        {rest.length > 0 && (
+          <section aria-labelledby="alle-artikelen">
+            <h2 id="alle-artikelen" class="sr-only">Alle artikelen</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {rest.map((article) => (
+                <ArticleCard article={article} />
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    )
+  }
+</BaseLayout>

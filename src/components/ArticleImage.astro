@@ -1,0 +1,72 @@
+---
+/**
+ * Toont de headerafbeelding van een artikel wanneer die is opgegeven.
+ * Zonder afbeelding valt de component terug op een rustige, herbruikbare
+ * merkplaceholder in de stijl van Geborgd Advies — zo breekt de site nooit.
+ */
+interface Props {
+  src?: string;
+  alt?: string;
+  category?: string;
+  /** Laadstrategie voor de <img> wanneer er een afbeelding is. */
+  loading?: "eager" | "lazy";
+  class?: string;
+}
+
+const {
+  src,
+  alt = "",
+  category,
+  loading = "lazy",
+  class: className = "",
+} = Astro.props;
+---
+
+{
+  src ? (
+    <img
+      src={src}
+      alt={alt}
+      loading={loading}
+      decoding="async"
+      class:list={["h-full w-full object-cover", className]}
+    />
+  ) : (
+    <div
+      class:list={[
+        "relative grid h-full w-full place-items-center overflow-hidden bg-primary",
+        className,
+      ]}
+      aria-hidden="true"
+    >
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-1/3 right-[-10%] h-2/3 w-2/3 rounded-full bg-primary-soft/60 blur-3xl" />
+        <div class="absolute bottom-[-30%] left-[-10%] h-1/2 w-1/2 rounded-full bg-accent/15 blur-3xl" />
+      </div>
+      <div class="relative flex flex-col items-center gap-3 px-6 text-center">
+        <span class="grid h-12 w-12 place-items-center rounded-xl bg-white/5 text-accent ring-1 ring-white/10">
+          <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+            <path
+              d="M12 2 4 5.5v6c0 4.4 3.2 8.4 8 10.5 4.8-2.1 8-6.1 8-10.5v-6L12 2Z"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+            />
+            <path
+              d="m8.5 12 2.5 2.5 4.5-5"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        {category && (
+          <span class="text-xs font-medium tracking-wider text-white/60 uppercase">
+            {category}
+          </span>
+        )}
+      </div>
+    </div>
+  )
+}

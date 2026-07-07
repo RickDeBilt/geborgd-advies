@@ -8,17 +8,28 @@ interface Props {
   description?: string;
   /** Relatief pad, bijv. "/diensten" — voor canonical/OG */
   path?: string;
+  /** og:type — standaard "website", "article" voor artikelen. */
+  ogType?: "website" | "article";
+  /** Pad of URL naar een deelbare afbeelding (Open Graph). */
+  image?: string;
+  /** Sluit de pagina uit van indexering (bijv. concepten). */
+  noindex?: boolean;
 }
 
 const {
   title = "Financieel-administratieve ondersteuning voor ondernemers",
   description = "Geborgd Advies ondersteunt ondernemers met financiële administratie, backoffice, financieel inzicht en HR-documentatie. Rustig, betrouwbaar en persoonlijk.",
   path = Astro.url.pathname,
+  ogType = "website",
+  image,
+  noindex = false,
 } = Astro.props;
 
 const siteName = "Geborgd Advies";
 const fullTitle = title.includes(siteName) ? title : `${title} — ${siteName}`;
-const canonical = new URL(path, Astro.site ?? "https://www.geborgdadvies.nl").href;
+const site = Astro.site ?? "https://www.geborgdadvies.nl";
+const canonical = new URL(path, site).href;
+const ogImage = image ? new URL(image, site).href : undefined;
 ---
 
 <!doctype html>
@@ -34,15 +45,29 @@ const canonical = new URL(path, Astro.site ?? "https://www.geborgdadvies.nl").hr
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#172033" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="nl_NL" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content="summary_large_image" />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <!-- RSS -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Geborgd Advies — Actueel & inzicht"
+      href={new URL("/rss.xml", site).href}
+    />
+
+    <!-- Extra head-inhoud (bijv. structured data) -->
+    <slot name="head" />
 
     <!-- Inter — enkel benodigde weights, non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

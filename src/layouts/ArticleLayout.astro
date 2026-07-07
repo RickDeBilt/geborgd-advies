@@ -1,0 +1,277 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import ArticleImage from "../components/ArticleImage.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import {
+  formatDate,
+  isoDate,
+  readingTime,
+  type Article,
+} from "../utils/articles";
+
+interface Props {
+  article: Article;
+  related?: Article[];
+}
+
+const { article, related = [] } = Astro.props;
+const { data } = article;
+
+const path = `/actueel/${article.id}/`;
+const minutes = readingTime(article.body);
+const intro = data.intro ?? data.description;
+const reviewed = data.reviewedDate ?? data.updatedDate ?? data.publishedDate;
+
+const site = Astro.site ?? new URL("https://www.geborgdadvies.nl");
+const canonical = new URL(path, site).href;
+const imageUrl = data.image ? new URL(data.image, site).href : undefined;
+
+const disclaimer =
+  "Dit artikel is bedoeld als algemene informatie en vervangt geen persoonlijk fiscaal, juridisch of arbeidsrechtelijk advies. Wet- en regelgeving en persoonlijke omstandigheden kunnen wijzigen. Laat bij twijfel uw specifieke situatie beoordelen.";
+
+// Structured data — BlogPosting
+const blogPosting: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: data.title,
+  description: data.description,
+  datePublished: isoDate(data.publishedDate),
+  dateModified: isoDate(data.updatedDate ?? data.publishedDate),
+  inLanguage: "nl-NL",
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  author: {
+    "@type": "Person",
+    name: data.author,
+    worksFor: { "@type": "Organization", name: data.authorRole },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Geborgd Advies",
+    url: site.href,
+  },
+  articleSection: data.category,
+};
+if (imageUrl) blogPosting.image = imageUrl;
+
+// Structured data — BreadcrumbList
+const breadcrumbList = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.href },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Actueel",
+      item: new URL("/actueel/", site).href,
+    },
+    { "@type": "ListItem", position: 3, name: data.title, item: canonical },
+  ],
+};
+---
+
+<BaseLayout
+  title={data.seoTitle ?? data.title}
+  description={data.description}
+  path={path}
+  ogType="article"
+  image={data.image}
+  noindex={data.draft}
+>
+  <Fragment slot="head">
+    <meta property="article:published_time" content={isoDate(data.publishedDate)} />
+    {data.updatedDate && (
+      <meta property="article:modified_time" content={isoDate(data.updatedDate)} />
+    )}
+    <meta property="article:section" content={data.category} />
+    <meta property="article:author" content={data.author} />
+    <script type="application/ld+json" set:html={JSON.stringify(blogPosting)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} />
+  </Fragment>
+
+  <!-- Header -->
+  <header class="border-b border-border bg-surface">
+    <div class="container-x max-w-3xl py-10 md:py-14">
+      <!-- Breadcrumb -->
+      <nav aria-label="Kruimelpad" class="text-sm text-muted">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="transition-colors hover:text-primary">Home</a></li>
+          <li aria-hidden="true" class="text-border">/</li>
+          <li><a href="/actueel/" class="transition-colors hover:text-primary">Actueel</a></li>
+          <li aria-hidden="true" class="text-border">/</li>
+          <li class="truncate text-primary" aria-current="page">{data.category}</li>
+        </ol>
+      </nav>
+
+      <div class="mt-6">
+        <span class="inline-flex items-center rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-primary">
+          {data.category}
+        </span>
+      </div>
+
+      <h1 class="mt-4 text-3xl leading-[1.15] font-semibold tracking-tight text-primary md:text-4xl">
+        {data.title}
+      </h1>
+
+      <p class="mt-5 text-lg leading-relaxed text-muted">{intro}</p>
+
+      <!-- Meta -->
+      <div class="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted">
+        <span class="font-medium text-primary">{data.author}</span>
+        <span aria-hidden="true">·</span>
+        <span>{data.authorRole}</span>
+        <span aria-hidden="true" class="text-border">|</span>
+        <time datetime={isoDate(data.publishedDate)}>
+          {formatDate(data.publishedDate)}
+        </time>
+        <span aria-hidden="true">·</span>
+        <span>{minutes} min lezen</span>
+      </div>
+      {data.updatedDate && (
+        <p class="mt-1.5 text-sm text-muted">
+          Laatst bijgewerkt op{" "}
+          <time datetime={isoDate(data.updatedDate)}>{formatDate(data.updatedDate)}</time>
+        </p>
+      )}
+    </div>
+  </header>
+
+  <!-- Optionele headerafbeelding -->
+  {data.image && (
+    <div class="container-x max-w-4xl">
+      <figure class="mt-10 overflow-hidden rounded-2xl border border-border">
+        <div class="aspect-[16/9]">
+          <ArticleImage
+            src={data.image}
+            alt={data.imageAlt ?? data.title}
+            category={data.category}
+            loading="eager"
+          />
+        </div>
+        {data.imageAlt && (
+          <figcaption class="bg-surface px-4 py-3 text-xs text-muted">
+            {data.imageAlt}
+          </figcaption>
+        )}
+      </figure>
+    </div>
+  )}
+
+  <!-- Artikelinhoud -->
+  <div class="container-x max-w-3xl py-12 md:py-16">
+    {data.keyTakeaways && data.keyTakeaways.length > 0 && (
+      <aside
+        class="mb-10 rounded-2xl border border-accent/40 bg-accent-soft/60 p-6 md:p-7"
+        aria-labelledby="in-het-kort"
+      >
+        <h2 id="in-het-kort" class="flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase">
+          <svg viewBox="0 0 20 20" fill="none" class="h-5 w-5 text-accent-hover" aria-hidden="true">
+            <path d="M10 2.5 12.5 7l5 .7-3.6 3.5.85 5-4.75-2.5L5.25 16l.85-5L2.5 7.7 7.5 7 10 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+          </svg>
+          In het kort
+        </h2>
+        <ul class="mt-4 space-y-2.5">
+          {data.keyTakeaways.map((point) => (
+            <li class="flex items-start gap-3 text-sm leading-relaxed text-text">
+              <svg viewBox="0 0 20 20" fill="none" class="mt-0.5 h-5 w-5 shrink-0 text-accent-hover" aria-hidden="true">
+                <path d="m5 10 3.5 3.5L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+
+    <div class="article-prose">
+      <slot />
+    </div>
+
+    <!-- Bronnen -->
+    {data.sources.length > 0 && (
+      <section class="mt-12 rounded-2xl border border-border bg-surface p-6 md:p-7" aria-labelledby="bronnen">
+        <h2 id="bronnen" class="text-sm font-semibold tracking-wide text-primary uppercase">Bronnen</h2>
+        <p class="mt-2 text-sm text-muted">
+          Voor dit artikel is gebruikgemaakt van de volgende bronnen. Externe bronnen
+          openen in een nieuw tabblad.
+        </p>
+        <ul class="mt-4 space-y-3">
+          {data.sources.map((source) => (
+            <li class="text-sm leading-relaxed">
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="font-medium text-primary underline decoration-accent underline-offset-2 hover:text-accent-hover"
+              >
+                {source.title}
+              </a>
+              <span class="text-muted"> — {source.name}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- Laatst gecontroleerd + disclaimer -->
+    <div class="mt-8 text-sm text-muted">
+      <p>
+        Informatie voor het laatst inhoudelijk gecontroleerd op{" "}
+        <time datetime={isoDate(reviewed)}>{formatDate(reviewed)}</time>.
+      </p>
+    </div>
+
+    <aside class="mt-4 rounded-xl border border-border bg-bg p-5 text-sm leading-relaxed text-muted" role="note">
+      <strong class="font-semibold text-primary">Disclaimer.</strong> {disclaimer}
+    </aside>
+  </div>
+
+  <!-- CTA -->
+  <section class="container-x pb-16 md:pb-20">
+    <div class="mx-auto max-w-3xl overflow-hidden rounded-[1.75rem] bg-primary px-8 py-12 md:px-12 md:py-14">
+      <div class="relative">
+        <h2 class="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+          Wat betekent dit voor uw organisatie?
+        </h2>
+        <p class="mt-4 leading-relaxed text-white/75">
+          Wilt u weten welke gevolgen deze ontwikkeling heeft voor uw administratie,
+          personeel of bedrijfsvoering? Geborgd Advies helpt u graag om de situatie
+          inzichtelijk te maken en praktisch te vertalen.
+        </p>
+        <a
+          href="/contact/"
+          class="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-accent-hover"
+        >
+          Neem contact op
+          <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4" aria-hidden="true">
+            <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gerelateerde artikelen -->
+  {related.length > 0 && (
+    <section class="border-t border-border bg-surface" aria-labelledby="gerelateerd">
+      <div class="container-x py-16 md:py-20">
+        <div class="flex items-end justify-between gap-4">
+          <h2 id="gerelateerd" class="text-2xl font-semibold tracking-tight text-primary md:text-3xl">
+            Meer inzichten
+          </h2>
+          <a href="/actueel/" class="hidden shrink-0 items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent-hover sm:inline-flex">
+            Alle artikelen
+            <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4" aria-hidden="true">
+              <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((item) => (
+            <ArticleCard article={item} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

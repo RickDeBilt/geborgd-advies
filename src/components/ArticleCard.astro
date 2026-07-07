@@ -1,0 +1,99 @@
+---
+import ArticleImage from "./ArticleImage.astro";
+import { formatDate, isoDate, readingTime, type Article } from "../utils/articles";
+
+interface Props {
+  article: Article;
+  /** Grotere, uitgelichte weergave (horizontaal op desktop). */
+  featured?: boolean;
+  /** Laadstrategie voor de afbeelding. */
+  loading?: "eager" | "lazy";
+}
+
+const { article, featured = false, loading = "lazy" } = Astro.props;
+const { data } = article;
+const href = `/actueel/${article.id}/`;
+const minutes = readingTime(article.body);
+---
+
+<article
+  class:list={[
+    "group relative flex overflow-hidden rounded-2xl border border-border bg-surface transition-all hover:border-accent/60 hover:shadow-[0_1px_0_0_rgba(23,32,51,0.02),0_12px_28px_-16px_rgba(23,32,51,0.25)]",
+    featured
+      ? "flex-col lg:flex-row"
+      : "flex-col",
+  ]}
+>
+  <div
+    class:list={[
+      "relative overflow-hidden bg-primary",
+      featured ? "aspect-[16/10] lg:aspect-auto lg:w-1/2" : "aspect-[16/10]",
+    ]}
+  >
+    <ArticleImage
+      src={data.image}
+      alt={data.imageAlt ?? data.title}
+      category={data.category}
+      loading={loading}
+      class="transition-transform duration-500 group-hover:scale-[1.03]"
+    />
+    <span
+      class="absolute left-4 top-4 inline-flex items-center rounded-full bg-bg/95 px-3 py-1 text-xs font-semibold text-primary shadow-sm backdrop-blur"
+    >
+      {data.category}
+    </span>
+  </div>
+
+  <div
+    class:list={[
+      "flex flex-1 flex-col p-6",
+      featured ? "lg:justify-center lg:p-9" : "",
+    ]}
+  >
+    <div class="flex items-center gap-2 text-xs text-muted">
+      <time datetime={isoDate(data.publishedDate)}>{formatDate(data.publishedDate)}</time>
+      <span aria-hidden="true">·</span>
+      <span>{minutes} min lezen</span>
+    </div>
+
+    <h3
+      class:list={[
+        "mt-3 font-semibold tracking-tight text-primary",
+        featured ? "text-2xl md:text-3xl" : "text-lg",
+      ]}
+    >
+      <a href={href} class="after:absolute after:inset-0 focus:outline-none">
+        {data.title}
+      </a>
+    </h3>
+
+    <p
+      class:list={[
+        "mt-2.5 flex-1 leading-relaxed text-muted",
+        featured ? "text-base md:max-w-xl" : "text-sm",
+      ]}
+    >
+      {data.description}
+    </p>
+
+    <span
+      class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+    >
+      Lees het artikel
+      <svg
+        viewBox="0 0 20 20"
+        fill="none"
+        class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+        aria-hidden="true"
+      >
+        <path
+          d="M4 10h12m-5-5 5 5-5 5"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </span>
+  </div>
+</article>
