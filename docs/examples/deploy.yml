@@ -28,9 +28,9 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -50,3 +50,11 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          # De PHP-backend (contactformulier + PHPMailer) staat al op de server
+          # en wordt handmatig beheerd. Uitsluiten voorkomt permissiefouten
+          # (550) op bestanden die door een ander account zijn geüpload.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/api/**
