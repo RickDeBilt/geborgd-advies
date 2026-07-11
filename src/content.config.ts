@@ -1,18 +1,20 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { CATEGORIES } from "./data/categories";
+import { wordpressLoader } from "./loaders/wordpress";
+
+// Her-export zodat bestaande imports vanuit content.config blijven werken.
+export { CATEGORIES } from "./data/categories";
 
 /**
- * Toegestane categorieën voor Actueel-artikelen.
- * Wilt u een nieuwe categorie? Voeg hem hier toe én in de filterlijst
- * op /actueel/ (src/pages/actueel/index.astro). Zie docs/BLOG-TOEVOEGEN.md.
+ * Bron van de artikelen.
+ *
+ * - Zonder WP_API_URL: lokale Markdown-bestanden in src/content/actueel/
+ *   (het gedrag zoals de site altijd heeft gewerkt).
+ * - Met WP_API_URL gezet: artikelen worden bij het bouwen uit de headless
+ *   WordPress-installatie gehaald. Zie docs/WORDPRESS.md.
  */
-export const CATEGORIES = [
-  "Financieel",
-  "Personeel",
-  "Wet- en regelgeving",
-  "Ondernemen",
-  "WIA & IVA",
-] as const;
+const WP_API_URL = process.env.WP_API_URL?.trim();
 
 /** Eén bron onder een artikel (naam, titel en URL). */
 const sourceSchema = z.object({
@@ -22,10 +24,12 @@ const sourceSchema = z.object({
 });
 
 const actueel = defineCollection({
-  // Elk artikel is een los Markdown-bestand in src/content/actueel/.
-  // Bestanden die met een underscore beginnen (bijv. _template.md) worden
-  // door Astro genegeerd en nooit als artikel verwerkt.
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/actueel" }),
+  // Bron: WordPress (headless) wanneer WP_API_URL is gezet, anders lokale
+  // Markdown-bestanden in src/content/actueel/. Bestanden die met een
+  // underscore beginnen (bijv. _template.md) worden door Astro genegeerd.
+  loader: WP_API_URL
+    ? wordpressLoader({ endpoint: WP_API_URL })
+    : glob({ pattern: "**/[^_]*.md", base: "./src/content/actueel" }),
   schema: z.object({
     title: z.string(),
     /** Alternatieve titel voor de <title>/SEO. Valt terug op `title`. */

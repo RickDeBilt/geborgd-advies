@@ -5,6 +5,11 @@ publiceert in de sectie **Actueel & inzicht** op de website van Geborgd Advies.
 U hoeft hiervoor geen programmeur te zijn: een artikel is gewoon één
 tekstbestand.
 
+> **Liever schrijven in WordPress?** De site kan artikelen ook uit een headless
+> WordPress-omgeving halen, zodat u ze via een vertrouwde beheeromgeving schrijft
+> in plaats van via tekstbestanden. Zie [WORDPRESS.md](WORDPRESS.md). Deze
+> Markdown-methode blijft werken zolang WordPress niet is gekoppeld.
+
 ---
 
 ## In het kort

@@ -1,0 +1,52 @@
+# Voorbeeld: bouw de Astro-site en zet hem via FTP op de webhosting.
+# Plaats dit bestand als .github/workflows/deploy.yml in de repository.
+#
+# Benodigde GitHub-secrets (Settings → Secrets and variables → Actions):
+#   WP_API_URL      Basis-URL van WordPress, bijv. https://cms.geborgdadvies.nl
+#   FTP_SERVER      FTP-host van de webhosting
+#   FTP_USERNAME    FTP-gebruikersnaam
+#   FTP_PASSWORD    FTP-wachtwoord
+#   FTP_REMOTE_DIR  Doelmap op de server, bijv. /public_html/
+#
+# Wordt getriggerd door: een handmatige start, een push naar main, of een
+# "repository_dispatch" die WordPress na publiceren stuurt (deploy-webhook).
+
+name: Bouw en deploy website
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [publish]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          WP_API_URL: ${{ secrets.WP_API_URL }}
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}

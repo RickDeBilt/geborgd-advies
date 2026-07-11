@@ -27,3 +27,6 @@ pnpm-debug.log*
 # (het .example-bestand mag wél in git)
 /private/*
 !/private/contact-config.example.php
+
+# Gebouwde plugin-zip (regenereerbaar)
+wordpress/*.zip
