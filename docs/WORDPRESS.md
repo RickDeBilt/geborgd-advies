@@ -158,11 +158,25 @@ enkele minuten staat het artikel online.
 
 ## 6. Bestaande artikelen overzetten
 
-Er staan al drie artikelen als Markdown in
-[`src/content/actueel/`](../src/content/actueel/). Zolang `WP_API_URL` niet is
-ingesteld, blijven die gewoon werken. Wil je volledig naar WordPress? Maak dan
-per artikel in WordPress een nieuw **Bericht** aan en neem de tekst en velden
-over:
+> **Snelste manier — importbestand.** In de repo staat een kant-en-klaar
+> WordPress-importbestand met de drie bestaande artikelen, inclusief alle velden
+> (In het kort, bronnen, categorie, uitlichten): `wordpress/import/actueel-artikelen.xml`.
+>
+> 1. Verwijder in wp-admin eerst het voorbeeldbericht **"Hello world!"**.
+> 2. Ga naar **Gereedschappen → Importeren → WordPress** en installeer zo nodig
+>    de importer.
+> 3. Upload `actueel-artikelen.xml`.
+> 4. Bij **Auteurs toewijzen**: kies je eigen account (zet de weergavenaam op
+>    "Edwin Borghuis" onder Gebruikers → Profiel). "Bijlagen importeren" is niet
+>    nodig.
+> 5. Controleer een bericht: het blok **"Actueel — artikelgegevens"** moet
+>    gevuld zijn.
+>
+> Het importbestand is gegenereerd uit de Markdown-bronnen; je hoeft dus niets
+> handmatig over te tikken.
+
+Liever handmatig? Maak dan per artikel een nieuw **Bericht** aan en neem de
+tekst en velden over:
 
 | Website-veld        | In WordPress                                     |
 | ------------------- | ------------------------------------------------ |

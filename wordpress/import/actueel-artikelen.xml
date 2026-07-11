@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+	<title>Geborgd Advies — Actueel</title>
+	<link>https://cms.geborgdadvies.nl</link>
+	<description>Import van bestaande Actueel-artikelen</description>
+	<language>nl-NL</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://cms.geborgdadvies.nl</wp:base_site_url>
+	<wp:base_blog_url>https://cms.geborgdadvies.nl</wp:base_blog_url>
+	<wp:author>
+		<wp:author_id>2</wp:author_id>
+		<wp:author_login><![CDATA[edwin]]></wp:author_login>
+		<wp:author_email><![CDATA[]]></wp:author_email>
+		<wp:author_display_name><![CDATA[Edwin Borghuis]]></wp:author_display_name>
+		<wp:author_first_name><![CDATA[Edwin]]></wp:author_first_name>
+		<wp:author_last_name><![CDATA[Borghuis]]></wp:author_last_name>
+	</wp:author>
+	<wp:category>
+		<wp:term_id>0</wp:term_id>
+		<wp:category_nicename>financieel</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Financieel]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>0</wp:term_id>
+		<wp:category_nicename>personeel</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Personeel]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>0</wp:term_id>
+		<wp:category_nicename>wet-en-regelgeving</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Wet- en regelgeving]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>0</wp:term_id>
+		<wp:category_nicename>ondernemen</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Ondernemen]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>0</wp:term_id>
+		<wp:category_nicename>wia-iva</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[WIA & IVA]]></wp:cat_name>
+	</wp:category>
+		<item>
+			<title><![CDATA[Minimumloon per 1 juli 2026: wat moet u als werkgever aanpassen?]]></title>
+			<link>https://cms.geborgdadvies.nl/?p=101</link>
+			<dc:creator><![CDATA[edwin]]></dc:creator>
+			<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Twee keer per jaar, op 1 januari en 1 juli, past de overheid het wettelijk minimumloon aan. Ook per 1 juli 2026 zijn de bedragen gewijzigd. Voor u als werkgever is dat meer dan alleen een nieuw getal in de salarisstrook: het raakt uw loonadministratie, uw interne documenten en soms ook uw begroting.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In dit artikel zetten we de nieuwe bedragen op een rij en leggen we vooral praktisch uit wat u als ondernemer moet controleren en aanpassen.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">De nieuwe minimumuurlonen per 1 juli 2026</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Het wettelijk minimumloon wordt uitgedrukt in een bedrag per uur. Hieronder staan de brutobedragen per uur zoals die vanaf 1 juli 2026 gelden:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table -->
+<figure class="wp-block-table"><table><thead><tr><th>Leeftijd</th><th>Bruto per uur</th></tr></thead><tbody><tr><td>21 jaar en ouder</td><td>€ 14,99</td></tr><tr><td>20 jaar</td><td>€ 11,99</td></tr><tr><td>19 jaar</td><td>€ 8,99</td></tr><tr><td>18 jaar</td><td>€ 7,50</td></tr><tr><td>17 jaar</td><td>€ 5,92</td></tr><tr><td>16 jaar</td><td>€ 5,17</td></tr><tr><td>15 jaar</td><td>€ 4,50</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph -->
+<p>Het gaat hierbij om <strong>brutobedragen per uur</strong>. Wat een medewerker netto overhoudt, hangt af van onder andere heffingen en persoonlijke omstandigheden.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Waarom er geen vast maand- of weekloon meer is</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Een belangrijk punt dat nog niet bij iedere ondernemer bekend is: sinds 1 januari 2024 bestaat er <strong>geen wettelijk minimum maand-, week- of dagloon</strong> meer. Het minimumloon wordt sindsdien alleen nog per uur vastgesteld.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Dat heeft een praktisch gevolg. Het minimumbedrag dat een voltijdmedewerker per maand hoort te krijgen, hangt af van het <strong>aantal te betalen uren</strong> in die periode. Werkt iemand in uw bedrijf 40 uur per week, dan komt het maandbedrag hoger uit dan bij een fulltime dienstverband van 36 uur. Het uurloon is dus de basis; het maandbedrag rolt daaruit.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Voor uw loonadministratie betekent dit dat u vooral moet controleren of het <strong>uurloon</strong> klopt en of het juiste aantal uren wordt uitbetaald.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Let op: een cao kan hogere bedragen voorschrijven</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>De genoemde bedragen zijn de wettelijke <strong>ondergrens</strong>. Valt uw onderneming onder een cao, dan kan die een hoger loon voorschrijven dan het wettelijk minimum. In dat geval is het cao-loon leidend. Controleer daarom altijd of er een cao van toepassing is en welke loonschalen daarin staan.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Ook voor <strong>BBL-leerlingen</strong> (de beroepsbegeleidende leerweg) kunnen deels andere jeugdlonen gelden. Heeft u leerling-werknemers in dienst, controleer dan de specifieke bedragen die voor hen van toepassing zijn.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Wat u concreet moet doen</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Een loonsverhoging vanuit de wet klinkt eenvoudig, maar in de praktijk raakt het meerdere onderdelen van uw personeels- en salarisadministratie. Loop daarom het volgende na.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Zorg dat het <strong>feitelijk uitbetaalde loon</strong> vanaf 1 juli 2026 minimaal gelijk is aan het nieuwe minimumuurloon dat bij de leeftijd van de medewerker hoort. Werkt u met een salarissoftware of een salarisadministrateur, controleer dan of de nieuwe bedragen tijdig zijn doorgevoerd.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let er daarbij op dat een aanpassing van het uurloon <strong>doorwerkt</strong> in andere onderdelen. Denk aan vakantiegeld, toeslagen, de waarde van ziekte-uren en verlofuren. Ook die worden berekend over het (juiste) loon en moeten dus kloppen.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Goed om te weten: bestaande <strong>arbeidsovereenkomsten hoeven niet altijd volledig te worden herschreven</strong>. Staat in een contract bijvoorbeeld dat een medewerker "ten minste het wettelijk minimumloon" ontvangt, dan schuift dat mee. Wél moet de feitelijke loonbetaling altijd voldoen aan de actuele regels. Waar in documenten vaste bedragen staan die inmiddels onder het minimum liggen, is aanpassing wel nodig.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Werkgeverschecklist minimumloon</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Gebruik deze checklist om niets over het hoofd te zien:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol>
+<!-- wp:list-item -->
+<li><strong>Uurloon controleren.</strong> Voldoet het uurloon van iedere medewerker per 1 juli 2026 aan het minimum dat bij zijn of haar leeftijd hoort?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Jeugdlonen bijwerken.</strong> Verjaart een medewerker binnenkort naar een nieuwe leeftijdscategorie? Plan de aanpassing tijdig in.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Cao naast wet leggen.</strong> Is er een cao van toepassing en schrijft die een hoger loon voor? Dan is het cao-loon leidend.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Doorwerking berekenen.</strong> Zijn vakantiegeld, toeslagen, ziekte-uren en verlof correct op basis van het juiste loon berekend?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>BBL-leerlingen apart bekijken.</strong> Kloppen de bedragen voor eventuele leerling-werknemers?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Interne documenten nalopen.</strong> Staan er in salarisschalen, arbeidsvoorwaarden of personeelsdocumenten vaste bedragen die inmiddels onder het minimum liggen?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Ingangsdatum vastleggen.</strong> Is de wijziging per de juiste datum verwerkt in uw salarisadministratie?</li>
+<!-- /wp:list-item -->
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Rustig en op tijd regelen</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>De aanpassing van het minimumloon is goed te overzien, zolang u het op tijd en systematisch aanpakt. De grootste risico's zitten niet in het nieuwe bedrag zelf, maar in de onderdelen die eromheen meebewegen: toeslagen, vakantiegeld en interne documenten die nog oude bedragen bevatten.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Wilt u zeker weten dat uw loonadministratie en personeelsdocumenten aansluiten op de actuele regels? Geborgd Advies ondersteunt werkgevers bij het ordenen en actueel houden van hun personeels- en salarisdocumentatie, zodat u met een gerust hart kunt uitbetalen. Voor de exacte, actuele bedragen verwijzen we u altijd naar de officiële informatie van de Rijksoverheid.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+			<excerpt:encoded><![CDATA[Het wettelijk minimumuurloon is per 1 juli 2026 gewijzigd. Dit zijn de nieuwe bedragen en de aandachtspunten voor uw loonadministratie en personeelsdocumenten.]]></excerpt:encoded>
+			<wp:post_id>101</wp:post_id>
+			<wp:post_date><![CDATA[2026-07-07 09:00:00]]></wp:post_date>
+			<wp:post_date_gmt><![CDATA[2026-07-07 07:00:00]]></wp:post_date_gmt>
+			<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+			<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+			<wp:post_name><![CDATA[minimumloon-per-1-juli-2026]]></wp:post_name>
+			<wp:status><![CDATA[publish]]></wp:status>
+			<wp:post_parent>0</wp:post_parent>
+			<wp:menu_order>0</wp:menu_order>
+			<wp:post_type><![CDATA[post]]></wp:post_type>
+			<wp:post_password><![CDATA[]]></wp:post_password>
+			<wp:is_sticky>0</wp:is_sticky>
+			<category domain="category" nicename="personeel"><![CDATA[Personeel]]></category>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_reviewed_date]]></wp:meta_key>
+				<wp:meta_value><![CDATA[2026-07-07]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_featured]]></wp:meta_key>
+				<wp:meta_value><![CDATA[1]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_key_takeaways]]></wp:meta_key>
+				<wp:meta_value><![CDATA[a:4:{i:0;s:113:"Sinds 1 juli 2026 gelden nieuwe wettelijke minimumuurlonen; voor 21 jaar en ouder is dat € 14,99 bruto per uur.";i:1;s:107:"Er bestaat sinds 2024 geen vast wettelijk minimum maand-, week- of dagloon meer; het draait om het uurloon.";i:2;s:92:"Controleer uw loonadministratie, salarisschalen en interne documenten op de nieuwe bedragen.";i:3;s:67:"Een cao kan een hoger loon voorschrijven dan het wettelijk minimum.";}]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_sources]]></wp:meta_key>
+				<wp:meta_value><![CDATA[a:2:{i:0;a:3:{s:4:"name";s:13:"Rijksoverheid";s:5:"title";s:25:"Bedragen minimumloon 2026";s:3:"url";s:99:"https://www.rijksoverheid.nl/themas/werk/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026";}i:1;a:3:{s:4:"name";s:13:"Rijksoverheid";s:5:"title";s:29:"Bedragen minimumloon BBL 2026";s:3:"url";s:117:"https://www.rijksoverheid.nl/themas/werk/minimumloon/bedragen-minimumloon-bbl-opleiding/bedragen-minimumloon-bbl-2026";}}]]></wp:meta_value>
+			</wp:postmeta>
+		</item>
+		<item>
+			<title><![CDATA[Schijnzelfstandigheid in 2026: aandachtspunten voor opdrachtgevers]]></title>
+			<link>https://cms.geborgdadvies.nl/?p=102</link>
+			<dc:creator><![CDATA[edwin]]></dc:creator>
+			<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Veel ondernemers werken met zelfstandigen zonder personeel. Dat is prima geregeld, zolang de zzp'er ook echt als zelfstandige werkt. Wordt er in de praktijk eigenlijk gewerkt als een werknemer, dan spreekt men van schijnzelfstandigheid — en dat kan voor u als opdrachtgever gevolgen hebben.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In dit artikel leggen we in begrijpelijke taal uit wat schijnzelfstandigheid is, waar de risico's zitten en waar u op kunt letten. Ook schetsen we de stand van de wet- en regelgeving, want daarover bestaat begrijpelijkerwijs verwarring.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Wat is schijnzelfstandigheid?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Van schijnzelfstandigheid is sprake als iemand <strong>op papier</strong> als zelfstandige werkt, maar de samenwerking in de <strong>praktijk</strong> meer lijkt op een dienstverband. De opdrachtnemer stuurt dan bijvoorbeeld een factuur en heeft een inschrijving bij de KVK, maar werkt feitelijk onder gezag, op vaste tijden en volledig ingebed in uw organisatie — net als een werknemer.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Het woord "schijn" is hier letterlijk bedoeld: de vorm (een opdrachtovereenkomst) en de werkelijkheid (een arbeidsrelatie) komen niet overeen.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Waarom dit nu extra aandacht vraagt</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>De Belastingdienst is per <strong>1 januari 2025</strong> weer actiever gaan handhaven op schijnzelfstandigheid. Waar de handhaving daarvoor jarenlang terughoudend was, kan de Belastingdienst nu weer optreden wanneer een arbeidsrelatie in werkelijkheid een dienstverband blijkt te zijn.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Voor u als opdrachtgever is dat relevant, omdat het risico deels bij u ligt. Als achteraf wordt vastgesteld dat sprake was van een dienstverband, kan dat leiden tot <strong>correcties en naheffing van loonheffingen</strong>. Daarnaast kunnen er <strong>arbeidsrechtelijke</strong> en soms <strong>pensioenrechtelijke</strong> gevolgen spelen. Denk aan aanspraken die bij een werknemer horen, zoals loondoorbetaling of ontslagbescherming.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Het contract alleen is niet doorslaggevend</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Een veelgemaakte aanname is dat een goede modelovereenkomst voldoende bescherming biedt. Dat is niet zo. Een contract is een startpunt, maar <strong>de feitelijke samenwerking telt</strong>. Rechtspraak van de Hoge Raad heeft bevestigd dat je naar alle omstandigheden van het geval moet kijken om te beoordelen of sprake is van een arbeidsovereenkomst. Niet één papier, maar het geheel van de werkelijkheid geeft de doorslag.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Met andere woorden: u kunt op papier "opdrachtnemer" hebben staan, maar als de dagelijkse gang van zaken die van een werknemer is, weegt dat zwaarder.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Waar wordt naar gekeken?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Bij de beoordeling spelen verschillende kenmerken een rol. Geen enkel kenmerk is op zichzelf altijd beslissend; het gaat om het totaalbeeld. De volgende punten komen doorgaans aan bod:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>Gezag:</strong> krijgt de persoon aanwijzingen over hoe het werk moet worden gedaan, of bepaalt hij dat zelf?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Zelfstandigheid:</strong> kan hij het werk naar eigen inzicht indelen?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Eigen risico:</strong> loopt hij ondernemersrisico, bijvoorbeeld bij fouten of het uitblijven van werk?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Vervangbaarheid:</strong> mag hij zich zonder meer laten vervangen door iemand anders?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Werktijden:</strong> werkt hij op vaste, door u bepaalde tijden of deelt hij zijn tijd zelf in?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Materialen en middelen:</strong> gebruikt hij eigen gereedschap, laptop en materialen, of die van u?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Meerdere opdrachtgevers:</strong> werkt hij voor meer partijen of vrijwel uitsluitend voor u?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Organisatorische inbedding:</strong> is het werk een kernonderdeel van uw organisatie en werkt hij als "gewoon" onderdeel van het team?</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Hoe meer de samenwerking lijkt op die van een werknemer, hoe groter de kans dat er feitelijk sprake is van een dienstverband.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">De stand van de wetgeving: onderscheid maken</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Rond zzp-wetgeving is de afgelopen tijd veel gebeurd, en niet alles is doorgegaan. Het is belangrijk om drie dingen uit elkaar te houden.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>1. Huidige handhaving.</strong> De Belastingdienst handhaaft sinds 1 januari 2025 weer op schijnzelfstandigheid. Dit is geen nieuwe wet, maar het actiever toepassen van bestaande regels.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>2. Bestaande regels en rechtspraak.</strong> De beoordeling of iemand werknemer of zelfstandige is, gebeurt aan de hand van de huidige wet en de rechtspraak daarover. Die lijn — kijken naar alle omstandigheden — geldt nu al.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>3. Voorgestelde of nog niet ingevoerde wetgeving.</strong> Het eerdere wetsvoorstel om de regels te verduidelijken (bekend onder de noemer Vbar) is voor het <strong>verduidelijkingsdeel in 2026 geschrapt</strong>. Het onderdeel over een <strong>rechtsvermoeden op basis van een uurtarief</strong> is als afzonderlijk wetsvoorstel verder behandeld. Dat wetsvoorstel is op het moment van schrijven nog niet als geldende wet in werking getreden.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kortom: laat u niet leiden door berichten die suggereren dat "de nieuwe wet" al geldt. Voor vandaag zijn vooral de huidige handhaving en de bestaande beoordeling relevant. Controleer bij belangrijke beslissingen altijd de meest actuele stand van zaken bij een officiële bron.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Controlelijst voor bestaande zzp-relaties</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Werkt u met een of meer zzp'ers? Loop dan per samenwerking het volgende na:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li>Sluit de <strong>feitelijke werkwijze</strong> aan bij wat in de overeenkomst staat?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Bepaalt de zzp'er zelf <strong>hoe, waar en wanneer</strong> hij werkt?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Werkt hij met <strong>eigen middelen</strong> en loopt hij <strong>eigen risico</strong>?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Heeft hij <strong>meerdere opdrachtgevers</strong> of werkt hij vrijwel alleen voor u?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Is het werk een <strong>tijdelijke of afgebakende opdracht</strong>, of structureel onderdeel van uw organisatie?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Zijn de <strong>afspraken actueel</strong> en kloppen ze nog met de praktijk?</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Mogelijke oplossingen</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Merkt u dat een samenwerking meer op een dienstverband lijkt dan u dacht? Dan zijn er verschillende richtingen mogelijk:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li>de <strong>samenwerking anders inrichten</strong>, zodat de zelfstandigheid duidelijker wordt;</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>de <strong>afspraken actualiseren</strong> en in lijn brengen met de werkelijke gang van zaken;</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>kiezen voor een <strong>arbeidsovereenkomst</strong> wanneer dat beter aansluit bij hoe er feitelijk wordt gewerkt.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Welke keuze passend is, hangt af van uw situatie en van wat u met de samenwerking wilt bereiken.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Hoe Geborgd Advies kan ondersteunen</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Geborgd Advies kan u helpen om uw zzp-relaties <strong>praktisch te inventariseren</strong> en uw documentatie op orde te brengen, zodat u een helder beeld krijgt van hoe de samenwerking is ingericht. Wij geven daarbij geen juridisch oordeel en verstrekken geen garanties over de uitkomst van een eventuele beoordeling. Voor een juridisch bindend advies verwijzen we u naar een gespecialiseerde adviseur, en voor de fiscale beoordeling naar de Belastingdienst.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Zo krijgt u overzicht en weet u waar aandacht nodig is — een verstandige eerste stap in een onderwerp dat volop in beweging is.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+			<excerpt:encoded><![CDATA[Werkt u met zzp'ers? Dan is niet alleen de overeenkomst belangrijk, maar vooral hoe er in de dagelijkse praktijk wordt samengewerkt.]]></excerpt:encoded>
+			<wp:post_id>102</wp:post_id>
+			<wp:post_date><![CDATA[2026-07-07 09:00:00]]></wp:post_date>
+			<wp:post_date_gmt><![CDATA[2026-07-07 07:00:00]]></wp:post_date_gmt>
+			<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+			<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+			<wp:post_name><![CDATA[schijnzelfstandigheid-2026-opdrachtgevers]]></wp:post_name>
+			<wp:status><![CDATA[publish]]></wp:status>
+			<wp:post_parent>0</wp:post_parent>
+			<wp:menu_order>0</wp:menu_order>
+			<wp:post_type><![CDATA[post]]></wp:post_type>
+			<wp:post_password><![CDATA[]]></wp:post_password>
+			<wp:is_sticky>0</wp:is_sticky>
+			<category domain="category" nicename="wet-en-regelgeving"><![CDATA[Wet- en regelgeving]]></category>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_reviewed_date]]></wp:meta_key>
+				<wp:meta_value><![CDATA[2026-07-07]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_featured]]></wp:meta_key>
+				<wp:meta_value><![CDATA[1]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_key_takeaways]]></wp:meta_key>
+				<wp:meta_value><![CDATA[a:4:{i:0;s:103:"Schijnzelfstandigheid betekent dat iemand op papier zzp'er is, maar in de praktijk als werknemer werkt.";i:1;s:89:"De Belastingdienst handhaaft sinds 1 januari 2025 weer actiever op schijnzelfstandigheid.";i:2;s:69:"Niet het contract, maar de feitelijke samenwerking is doorslaggevend.";i:3;s:87:"Opdrachtgever en opdrachtnemer zijn samen verantwoordelijk voor de juiste contractvorm.";}]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_sources]]></wp:meta_key>
+				<wp:meta_value><![CDATA[a:3:{i:0;a:3:{s:4:"name";s:13:"Rijksoverheid";s:5:"title";s:35:"Het juiste contract: zzp ja of nee?";s:3:"url";s:111:"https://www.rijksoverheid.nl/themas/werk/zelfstandigen-zonder-personeel-zzp/voorkomen-van-schijnzelfstandigheid";}i:1;a:3:{s:4:"name";s:13:"Rijksoverheid";s:5:"title";s:76:"Kabinet kiest voor meer rust en duidelijkheid voor zzp'ers en opdrachtgevers";s:3:"url";s:130:"https://www.rijksoverheid.nl/actueel/nieuws/2026/03/06/kabinet-kiest-voor-meer-rust-en-duidelijkheid-voor-zzpers-en-opdrachtgevers";}i:2;a:3:{s:4:"name";s:12:"Eerste Kamer";s:5:"title";s:80:"Wet invoering rechtsvermoeden van arbeidsovereenkomst op basis van een uurtarief";s:3:"url";s:59:"https://www.eerstekamer.nl/wetsvoorstel/36783_wet_invoering";}}]]></wp:meta_value>
+			</wp:postmeta>
+		</item>
+		<item>
+			<title><![CDATA[Thuiskantoor in 2026: welke zakelijke kosten zijn aftrekbaar?]]></title>
+			<link>https://cms.geborgdadvies.nl/?p=103</link>
+			<dc:creator><![CDATA[edwin]]></dc:creator>
+			<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Steeds meer ondernemers werken (deels) vanuit huis. Dat scheelt reistijd en soms ook de kosten van een externe werkplek. Logisch dat u zich afvraagt welke uitgaven voor uw thuiswerkplek u zakelijk mag opvoeren. Het antwoord is genuanceerder dan veel ondernemers denken: niet elke uitgave die met thuiswerken te maken heeft, is automatisch aftrekbaar.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In dit artikel leggen we op hoofdlijnen uit welk onderscheid de Belastingdienst maakt, waar u op kunt letten en waarom een goede administratie hierbij het verschil maakt. Belangrijk vooraf: dit is algemene informatie. Uw persoonlijke situatie bepaalt wat in uw geval van toepassing is.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Twee soorten kosten die vaak door elkaar lopen</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>De verwarring ontstaat meestal doordat twee dingen op één hoop worden gegooid:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol>
+<!-- wp:list-item -->
+<li>de <strong>kosten van de werkruimte</strong> zelf — denk aan een deel van de huur, hypotheekrente, energie, inrichting of onderhoud van de kamer waarin u werkt;</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>de <strong>zakelijke bedrijfsmiddelen en middelen</strong> die u gebruikt om uw werk te doen — zoals een laptop, printer, telefoon, internet of software.</li>
+<!-- /wp:list-item -->
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Voor deze twee categorieën gelden verschillende regels. Dat verklaart waarom een laptop vaak wel als zakelijke kost kan worden aangemerkt, terwijl de energiekosten van uw werkkamer dat meestal niet zijn.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">De werkruimte in uw eigen woning: meestal niet aftrekbaar</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Voor de meeste ondernemers geldt dat de kosten van een werkruimte in de eigen woning <strong>niet</strong> aftrekbaar zijn. Dat geldt bijvoorbeeld voor een deel van de huur, de hypotheekrente, energie of de inrichting van die kamer. De achterliggende gedachte is dat een kamer in uw huis in de eerste plaats onderdeel is van uw privéwoning.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Er bestaan uitzonderingssituaties waarin andere regels kunnen gelden. De Belastingdienst hanteert daarvoor voorwaarden die onder meer te maken hebben met de zelfstandigheid van de ruimte — denk aan een eigen ingang en eigen voorzieningen — en met de vraag welk deel van uw inkomen u in of vanuit die ruimte verdient. Of u aan die voorwaarden voldoet, hangt sterk af van uw specifieke situatie en van de vraag of u de woning huurt of in eigendom heeft.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Omdat deze regels nauw luisteren en per situatie verschillen, is dit bij uitstek een onderwerp om niet op de gok in te vullen. Loopt u hier tegenaan, laat uw situatie dan beoordelen voordat u kosten opvoert.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Zakelijke bedrijfsmiddelen: het gaat om zakelijk gebruik</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Naast de werkruimte gebruikt u waarschijnlijk spullen die u nodig heeft om uw werk te doen. Een laptop, een printer, zakelijke software of een telefoonabonnement kunnen zakelijke kosten of bedrijfsmiddelen zijn. Of en in welke mate u deze kunt opvoeren, hangt af van het zakelijke gebruik en van de aard en hoogte van de uitgave.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Enkele voorbeelden om het concreet te maken:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>Laptop of computer.</strong> Gebruikt u deze zakelijk, dan kan hij tot uw bedrijfsmiddelen horen. Bij duurdere aanschaffen speelt afschrijving over meerdere jaren soms een rol.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Printer en kantoorbenodigdheden.</strong> Aanschaffen die u voor uw onderneming gebruikt, kunnen zakelijke kosten zijn.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Zakelijke software en abonnementen.</strong> Denk aan boekhoudsoftware of vakspecifieke programma's die u voor uw werk gebruikt.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Telefoon en internet.</strong> Deze gebruikt u vaak zowel zakelijk als privé. Bij zulke gemengde kosten gaat het om het zakelijke deel, niet om het volledige bedrag.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Wees hierbij voorzichtig met stellige aannames. Het is niet zo dat ieder bureau, iedere internetverbinding of alle energiekosten volledig aftrekbaar zijn. Juist bij middelen die u ook privé gebruikt, is een redelijke onderbouwing van het zakelijke deel belangrijk.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Gemengde kosten: alleen het zakelijke deel telt</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Veel thuiswerkkosten zijn "gemengd": u gebruikt hetzelfde abonnement of apparaat zowel voor uw werk als privé. In die gevallen is niet het hele bedrag zakelijk. U kijkt naar het deel dat daadwerkelijk met uw onderneming te maken heeft.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Een privé-uitgave hoort niet in uw zakelijke administratie thuis, ook niet gedeeltelijk, als er geen zakelijk gebruik tegenover staat. Het klakkeloos zakelijk boeken van privékosten kan bij een controle tot correcties leiden. Een reële, navolgbare verdeling voorkomt discussie achteraf.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Waarom uw administratie het verschil maakt</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Of een uitgave zakelijk is, moet u kunnen laten zien. Dat begint bij een ordelijke administratie:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li>bewaar <strong>facturen en bonnen</strong> van zakelijke aankopen;</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>zorg dat facturen op naam van uw onderneming staan waar dat kan;</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>houd een <strong>duidelijke scheiding</strong> aan tussen zakelijke en privé-uitgaven, bijvoorbeeld via een aparte zakelijke rekening;</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>leg bij gemengde kosten kort vast hoe u tot een zakelijk deel komt.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Een goede administratie is niet alleen handig bij uw aangifte, maar geeft u ook zelf rust en overzicht. U ziet in één oogopslag wat uw onderneming werkelijk kost.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Praktische checklist voor uw thuiswerkkosten</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Loop bij twijfel deze punten na:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li>Gaat het om de <strong>werkruimte</strong> zelf of om een <strong>bedrijfsmiddel</strong>? Die vraag bepaalt welke regels spelen.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Gebruikt u het middel <strong>zakelijk, privé of allebei</strong>? Bij gemengd gebruik telt alleen het zakelijke deel.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Heeft u een <strong>factuur of bon</strong> en staat die zo veel mogelijk op naam van uw onderneming?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Zijn zakelijke en privékosten in uw administratie <strong>duidelijk gescheiden</strong>?</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Twijfelt u over de werkruimte in uw woning? Ga er dan niet zomaar van uit dat de kosten aftrekbaar zijn.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Bij twijfel: controleer of vraag advies</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>De regels rond thuiswerkkosten zitten vol nuances en veranderen af en toe. Twijfelt u of een bepaalde uitgave zakelijk is? Gebruik dan het hulpmiddel van de Belastingdienst of laat uw situatie beoordelen door een deskundige. Zo voorkomt u vervelende correcties en weet u zeker dat u niets onnodig laat liggen.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Geborgd Advies helpt ondernemers om hun administratie zo in te richten dat zakelijke en privékosten helder gescheiden blijven en uw uitgaven goed onderbouwd zijn. Zo houdt u grip op uw cijfers, zonder dat u zich in de fiscale details hoeft te verdiepen.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+			<excerpt:encoded><![CDATA[Thuiswerken kan kosten besparen, maar niet iedere uitgave voor een werkplek aan huis is automatisch aftrekbaar. Lees waar ondernemers op moeten letten.]]></excerpt:encoded>
+			<wp:post_id>103</wp:post_id>
+			<wp:post_date><![CDATA[2026-07-07 09:00:00]]></wp:post_date>
+			<wp:post_date_gmt><![CDATA[2026-07-07 07:00:00]]></wp:post_date_gmt>
+			<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+			<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+			<wp:post_name><![CDATA[thuiskantoor-aftrekbare-kosten-2026]]></wp:post_name>
+			<wp:status><![CDATA[publish]]></wp:status>
+			<wp:post_parent>0</wp:post_parent>
+			<wp:menu_order>0</wp:menu_order>
+			<wp:post_type><![CDATA[post]]></wp:post_type>
+			<wp:post_password><![CDATA[]]></wp:post_password>
+			<wp:is_sticky>0</wp:is_sticky>
+			<category domain="category" nicename="financieel"><![CDATA[Financieel]]></category>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_reviewed_date]]></wp:meta_key>
+				<wp:meta_value><![CDATA[2026-07-07]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_featured]]></wp:meta_key>
+				<wp:meta_value><![CDATA[1]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_key_takeaways]]></wp:meta_key>
+				<wp:meta_value><![CDATA[a:4:{i:0;s:93:"Kosten van een werkruimte in uw eigen woning zijn voor de meeste ondernemers niet aftrekbaar.";i:1;s:115:"Zakelijke bedrijfsmiddelen zoals een laptop, printer of software vallen onder andere regels dan de werkruimte zelf.";i:2;s:65:"Bij gemengd gebruik telt alleen het zakelijke deel van de kosten.";i:3;s:82:"Een ordelijke administratie met facturen en bonnen is de basis voor iedere aftrek.";}]]></wp:meta_value>
+			</wp:postmeta>
+			<wp:postmeta>
+				<wp:meta_key><![CDATA[ga_sources]]></wp:meta_key>
+				<wp:meta_value><![CDATA[a:3:{i:0;a:3:{s:4:"name";s:7:"De Zaak";s:5:"title";s:44:"Thuiskantoor: welke kosten mag je aftrekken?";s:3:"url";s:95:"https://www.dezaak.nl/vaste-lasten/kantoor-werkplek/thuiskantoor-welke-kosten-mag-je-aftrekken/";}i:1;a:3:{s:4:"name";s:15:"Belastingdienst";s:5:"title";s:57:"Zijn kosten voor de werkruimte in mijn woning aftrekbaar?";s:3:"url";s:126:"https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/content/zijn-kosten-voor-de-werkruimte-in-mijn-woning-aftrekbaar";}i:2;a:3:{s:4:"name";s:15:"Belastingdienst";s:5:"title";s:16:"Zakelijke kosten";s:3:"url";s:179:"https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/zakelijke_kosten/zakelijke_kosten";}}]]></wp:meta_value>
+			</wp:postmeta>
+		</item>
+</channel>
+</rss>
