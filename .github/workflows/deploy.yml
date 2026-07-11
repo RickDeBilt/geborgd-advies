@@ -50,6 +50,12 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          # FTP over TLS. Veel hosts resetten een onversleutelde dataverbinding
+          # (ECONNRESET); expliciete FTPS lost dat op. security: loose accepteert
+          # ook certificaten die niet exact op de hostnaam staan.
+          protocol: ftps
+          security: loose
+          timeout: 60000
           # De PHP-backend (contactformulier + PHPMailer) staat al op de server
           # en wordt handmatig beheerd. Uitsluiten voorkomt permissiefouten
           # (550) op bestanden die door een ander account zijn geüpload.
