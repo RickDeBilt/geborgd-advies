@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       Geborgd Advies — Actueel CMS
- * Description:        Voegt de velden toe die de website voor "Actueel"-artikelen gebruikt (categorie, In het kort, bronnen, SEO) en stelt ze beschikbaar via de REST API voor de headless Astro-frontend.
- * Version:           1.0.0
+ * Description:        Voegt de velden toe die de website voor "Actueel"-artikelen gebruikt (categorie, In het kort, bronnen, SEO, CTA) en stelt ze beschikbaar via de REST API voor de headless Astro-frontend.
+ * Version:           1.1.0
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            Geborgd Advies
@@ -121,6 +121,48 @@ function ga_cms_register_meta(): void
             ],
         ],
     ]);
+
+    // Call-to-action (CTA) onderaan het artikel. Laat de tekstvelden leeg om de
+    // standaard-CTA van de website te tonen; vink verbergen aan om hem weg te laten.
+    register_post_meta('post', 'ga_cta_title', [
+        'type'          => 'string',
+        'single'        => true,
+        'show_in_rest'  => true,
+        'auth_callback' => $can_edit,
+        'default'       => '',
+    ]);
+
+    register_post_meta('post', 'ga_cta_text', [
+        'type'          => 'string',
+        'single'        => true,
+        'show_in_rest'  => true,
+        'auth_callback' => $can_edit,
+        'default'       => '',
+    ]);
+
+    register_post_meta('post', 'ga_cta_button', [
+        'type'          => 'string',
+        'single'        => true,
+        'show_in_rest'  => true,
+        'auth_callback' => $can_edit,
+        'default'       => '',
+    ]);
+
+    register_post_meta('post', 'ga_cta_href', [
+        'type'          => 'string',
+        'single'        => true,
+        'show_in_rest'  => true,
+        'auth_callback' => $can_edit,
+        'default'       => '',
+    ]);
+
+    register_post_meta('post', 'ga_cta_hide', [
+        'type'          => 'boolean',
+        'single'        => true,
+        'show_in_rest'  => true,
+        'auth_callback' => $can_edit,
+        'default'       => false,
+    ]);
 }
 
 /* -------------------------------------------------------------------------
@@ -151,6 +193,12 @@ function ga_cms_render_meta_box(WP_Post $post): void
     $author_role  = (string) get_post_meta($post->ID, 'ga_author_role', true);
     $image_alt    = (string) get_post_meta($post->ID, 'ga_image_alt', true);
     $featured     = (bool) get_post_meta($post->ID, 'ga_featured', true);
+
+    $cta_title    = (string) get_post_meta($post->ID, 'ga_cta_title', true);
+    $cta_text     = (string) get_post_meta($post->ID, 'ga_cta_text', true);
+    $cta_button   = (string) get_post_meta($post->ID, 'ga_cta_button', true);
+    $cta_href     = (string) get_post_meta($post->ID, 'ga_cta_href', true);
+    $cta_hide     = (bool) get_post_meta($post->ID, 'ga_cta_hide', true);
 
     $takeaways = get_post_meta($post->ID, 'ga_key_takeaways', true);
     $takeaways = is_array($takeaways) ? implode("\n", $takeaways) : '';
@@ -241,6 +289,47 @@ Controleer uw loonadministratie op de nieuwe bedragen."><?php echo esc_textarea(
         <input type="text" id="ga_seo_title" name="ga_seo_title" value="<?php echo esc_attr($seo_title); ?>" />
         <p class="description">Alternatieve titel voor Google en het browsertabblad. Leeg = gewone titel.</p>
     </div>
+
+    <hr style="margin:24px 0;border:0;border-top:1px solid #dcdcde;" />
+
+    <p style="color:#646970;">
+        <strong>Oproep onderaan (CTA).</strong> Laat de onderstaande velden leeg,
+        dan verschijnt automatisch de standaard-CTA van de website. Vult u een veld
+        in, dan overschrijft dat de standaard. Wilt u helemaal geen CTA onder dit
+        artikel? Vink dan "CTA verbergen" aan.
+    </p>
+
+    <div class="ga-field">
+        <label>
+            <input type="checkbox" name="ga_cta_hide" value="1" <?php checked($cta_hide); ?> />
+            CTA verbergen onder dit artikel
+        </label>
+        <p class="description">Overslaan van de oproep onderaan. De onderstaande velden worden dan genegeerd.</p>
+    </div>
+
+    <div class="ga-field">
+        <label for="ga_cta_title">CTA-titel</label>
+        <input type="text" id="ga_cta_title" name="ga_cta_title" value="<?php echo esc_attr($cta_title); ?>" placeholder="Wat betekent dit voor uw organisatie?" />
+        <p class="description">Leeg = standaardtitel.</p>
+    </div>
+
+    <div class="ga-field">
+        <label for="ga_cta_text">CTA-tekst</label>
+        <textarea id="ga_cta_text" name="ga_cta_text" placeholder="Wilt u weten welke gevolgen deze ontwikkeling heeft voor uw administratie, personeel of bedrijfsvoering? …"><?php echo esc_textarea($cta_text); ?></textarea>
+        <p class="description">Leeg = standaardtekst.</p>
+    </div>
+
+    <div class="ga-field">
+        <label for="ga_cta_button">Knoptekst</label>
+        <input type="text" id="ga_cta_button" name="ga_cta_button" value="<?php echo esc_attr($cta_button); ?>" placeholder="Neem contact op" />
+        <p class="description">Leeg = "Neem contact op".</p>
+    </div>
+
+    <div class="ga-field">
+        <label for="ga_cta_href">Knoplink</label>
+        <input type="text" id="ga_cta_href" name="ga_cta_href" value="<?php echo esc_attr($cta_href); ?>" placeholder="/contact/" />
+        <p class="description">Leeg = <code>/contact/</code>. Gebruik een pad op de site (bijv. <code>/diensten/</code>) of een volledige URL.</p>
+    </div>
     <?php
 }
 
@@ -271,6 +360,13 @@ function ga_cms_save_meta(int $post_id, WP_Post $post): void
     update_post_meta($post_id, 'ga_author_role', sanitize_text_field($_POST['ga_author_role'] ?? ''));
     update_post_meta($post_id, 'ga_image_alt', sanitize_text_field($_POST['ga_image_alt'] ?? ''));
     update_post_meta($post_id, 'ga_featured', isset($_POST['ga_featured']) ? true : false);
+
+    // Call-to-action (CTA). Lege velden vallen op de website terug op de standaard.
+    update_post_meta($post_id, 'ga_cta_title', sanitize_text_field($_POST['ga_cta_title'] ?? ''));
+    update_post_meta($post_id, 'ga_cta_text', sanitize_textarea_field($_POST['ga_cta_text'] ?? ''));
+    update_post_meta($post_id, 'ga_cta_button', sanitize_text_field($_POST['ga_cta_button'] ?? ''));
+    update_post_meta($post_id, 'ga_cta_href', esc_url_raw($_POST['ga_cta_href'] ?? '', ['http', 'https', 'mailto', 'tel']));
+    update_post_meta($post_id, 'ga_cta_hide', isset($_POST['ga_cta_hide']) ? true : false);
 
     // In het kort: één punt per regel.
     $takeaways_raw = (string) wp_unslash($_POST['ga_key_takeaways'] ?? '');

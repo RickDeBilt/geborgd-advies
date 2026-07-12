@@ -186,7 +186,7 @@ tekst en velden over:
 | Categorie           | Categorie (kies uit de vaste lijst)              |
 | Hoofdtekst          | De editor (koppen, lijsten, tabellen)            |
 | Afbeelding          | **Uitgelichte afbeelding**                       |
-| Intro, In het kort, Bronnen, SEO-titel, Controledatum, Uitlichten | Blok **"Actueel — artikelgegevens"** onder de editor |
+| Intro, In het kort, Bronnen, SEO-titel, Controledatum, Uitlichten, CTA | Blok **"Actueel — artikelgegevens"** onder de editor |
 
 Houd de **slug gelijk** aan de oude bestandsnaam, dan blijven bestaande links en
 de SEO-waarde behouden.
@@ -217,6 +217,16 @@ de SEO-waarde behouden.
    - **In het kort** — de kernpunten, één per regel.
    - **Bronnen** — één per regel als `Naam | Titel | https://url`.
    - **Uitlichten** — aanvinken om het artikel groot bovenaan te tonen.
+   - **Oproep onderaan (CTA)** — laat de CTA-velden leeg voor de standaardoproep,
+     of vul een eigen titel, tekst, knoptekst en knoplink in. Vink **CTA
+     verbergen** aan om er onder dit artikel géén te tonen.
    - Overige velden zijn optioneel.
+
+> **Over de CTA (oproep onderaan).** Onder elk artikel staat standaard een
+> oproep om contact op te nemen. Vult u niets in, dan verschijnt automatisch de
+> standaardtekst. Wilt u voor een specifiek artikel een andere oproep of link
+> (bijv. naar `/diensten/`)? Vul dan de CTA-velden in het blok *"Actueel —
+> artikelgegevens"*. Alleen de ingevulde velden overschrijven de standaard; lege
+> velden blijven de standaard gebruiken.
 5. Klik op **Publiceren**. Bij automatische koppeling (Optie B) staat het
    artikel binnen enkele minuten online.

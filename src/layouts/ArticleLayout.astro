@@ -29,6 +29,22 @@ const imageUrl = data.image ? new URL(data.image, site).href : undefined;
 const disclaimer =
   "Dit artikel is bedoeld als algemene informatie en vervangt geen persoonlijk fiscaal, juridisch of arbeidsrechtelijk advies. Wet- en regelgeving en persoonlijke omstandigheden kunnen wijzigen. Laat bij twijfel uw specifieke situatie beoordelen.";
 
+// Call-to-action: elk veld valt terug op de standaardtekst als het leeg is.
+// Zet cta.hide op true om de CTA voor dit artikel volledig te verbergen.
+const ctaDefaults = {
+  title: "Wat betekent dit voor uw organisatie?",
+  text: "Wilt u weten welke gevolgen deze ontwikkeling heeft voor uw administratie, personeel of bedrijfsvoering? Geborgd Advies helpt u graag om de situatie inzichtelijk te maken en praktisch te vertalen.",
+  buttonLabel: "Neem contact op",
+  buttonHref: "/contact/",
+};
+const showCta = !data.cta.hide;
+const cta = {
+  title: data.cta.title ?? ctaDefaults.title,
+  text: data.cta.text ?? ctaDefaults.text,
+  buttonLabel: data.cta.buttonLabel ?? ctaDefaults.buttonLabel,
+  buttonHref: data.cta.buttonHref ?? ctaDefaults.buttonHref,
+};
+
 // Structured data — BlogPosting
 const blogPosting: Record<string, unknown> = {
   "@context": "https://schema.org",
@@ -227,29 +243,29 @@ const breadcrumbList = {
   </div>
 
   <!-- CTA -->
-  <section class="container-x pb-16 md:pb-20">
-    <div class="mx-auto max-w-3xl overflow-hidden rounded-[1.75rem] bg-primary px-8 py-12 md:px-12 md:py-14">
-      <div class="relative">
-        <h2 class="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-          Wat betekent dit voor uw organisatie?
-        </h2>
-        <p class="mt-4 leading-relaxed text-white/75">
-          Wilt u weten welke gevolgen deze ontwikkeling heeft voor uw administratie,
-          personeel of bedrijfsvoering? Geborgd Advies helpt u graag om de situatie
-          inzichtelijk te maken en praktisch te vertalen.
-        </p>
-        <a
-          href="/contact/"
-          class="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-accent-hover"
-        >
-          Neem contact op
-          <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4" aria-hidden="true">
-            <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </a>
+  {showCta && (
+    <section class="container-x pb-16 md:pb-20">
+      <div class="mx-auto max-w-3xl overflow-hidden rounded-[1.75rem] bg-primary px-8 py-12 md:px-12 md:py-14">
+        <div class="relative">
+          <h2 class="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            {cta.title}
+          </h2>
+          <p class="mt-4 leading-relaxed text-white/75">
+            {cta.text}
+          </p>
+          <a
+            href={cta.buttonHref}
+            class="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-accent-hover"
+          >
+            {cta.buttonLabel}
+            <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4" aria-hidden="true">
+              <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Gerelateerde artikelen -->
   {related.length > 0 && (

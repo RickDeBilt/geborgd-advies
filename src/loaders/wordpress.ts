@@ -170,6 +170,13 @@ export function wordpressLoader(options: WordPressLoaderOptions): Loader {
             meta,
             "ga_sources",
           ),
+          cta: {
+            title: metaString(meta, "ga_cta_title"),
+            text: metaString(meta, "ga_cta_text"),
+            buttonLabel: metaString(meta, "ga_cta_button"),
+            buttonHref: metaString(meta, "ga_cta_href"),
+            hide: metaBool(meta, "ga_cta_hide"),
+          },
         };
 
         // Verwijder undefined-waarden zodat schema-standaardwaarden pakken.
