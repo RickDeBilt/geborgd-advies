@@ -23,6 +23,16 @@ const sourceSchema = z.object({
   url: z.string().url(),
 });
 
+// Optionele call-to-action per artikel. Laat een veld leeg om terug te vallen op
+// de standaardtekst in ArticleLayout; zet hide op true om de CTA te verbergen.
+const ctaSchema = z.object({
+  title: z.string().optional(),
+  text: z.string().optional(),
+  buttonLabel: z.string().optional(),
+  buttonHref: z.string().optional(),
+  hide: z.boolean().default(false),
+});
+
 const actueel = defineCollection({
   // Bron: WordPress (headless) wanneer WP_API_URL is gezet, anders lokale
   // Markdown-bestanden in src/content/actueel/. Bestanden die met een
@@ -54,6 +64,7 @@ const actueel = defineCollection({
     keyTakeaways: z.array(z.string()).optional(),
     /** Bronnen die onderaan het artikel worden getoond. */
     sources: z.array(sourceSchema).default([]),
+    cta: ctaSchema.default({}),
   }),
 });
 

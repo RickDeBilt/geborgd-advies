@@ -1,5 +1,12 @@
-import type { Loader, LoaderContext } from "astro/loaders";
+import { glob, type Loader, type LoaderContext } from "astro/loaders";
 import { CATEGORIES } from "../data/categories";
+
+/**
+ * Locatie van de lokale Markdown-artikelen. Moet gelijk blijven aan de glob-
+ * loader in src/content.config.ts, zodat de fallback dezelfde bron gebruikt.
+ */
+const LOCAL_FALLBACK_PATTERN = "**/[^_]*.md";
+const LOCAL_FALLBACK_BASE = "./src/content/actueel";
 
 /**
  * Astro content-loader die "Actueel"-artikelen bij het bouwen ophaalt uit een
@@ -141,9 +148,28 @@ async function fetchAllPosts(options: WordPressLoaderOptions): Promise<WpPost[]>
 export function wordpressLoader(options: WordPressLoaderOptions): Loader {
   return {
     name: "geborgd-advies-wordpress",
-    async load({ store, parseData, generateDigest, logger }: LoaderContext) {
+    async load(context: LoaderContext) {
+      const { store, parseData, generateDigest, logger } = context;
       logger.info(`Artikelen ophalen uit WordPress: ${options.endpoint}`);
-      const posts = await fetchAllPosts(options);
+
+      let posts: WpPost[];
+      try {
+        posts = await fetchAllPosts(options);
+      } catch (error) {
+        // WordPress onbereikbaar of een API-fout mag de build niet laten falen:
+        // val terug op de lokale Markdown-artikelen, zodat de site altijd bouwt.
+        const message = error instanceof Error ? error.message : String(error);
+        logger.warn(
+          `WordPress niet bereikbaar (${message}). ` +
+            `Terugvallen op de lokale Markdown-artikelen in ${LOCAL_FALLBACK_BASE}.`,
+        );
+        await glob({
+          pattern: LOCAL_FALLBACK_PATTERN,
+          base: LOCAL_FALLBACK_BASE,
+        }).load(context);
+        return;
+      }
+
       store.clear();
 
       for (const post of posts) {
@@ -170,6 +196,13 @@ export function wordpressLoader(options: WordPressLoaderOptions): Loader {
             meta,
             "ga_sources",
           ),
+          cta: {
+            title: metaString(meta, "ga_cta_title"),
+            text: metaString(meta, "ga_cta_text"),
+            buttonLabel: metaString(meta, "ga_cta_button"),
+            buttonHref: metaString(meta, "ga_cta_href"),
+            hide: metaBool(meta, "ga_cta_hide"),
+          },
         };
 
         // Verwijder undefined-waarden zodat schema-standaardwaarden pakken.

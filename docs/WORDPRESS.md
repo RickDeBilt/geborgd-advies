@@ -26,6 +26,12 @@ Zonder de omgevingsvariabele `WP_API_URL` werkt de site precies zoals voorheen
 op basis van de lokale Markdown-bestanden. Zodra `WP_API_URL` is ingesteld,
 komen de artikelen uit WordPress. Zo kun je rustig overstappen.
 
+> **Robuuste build.** Is WordPress tijdens het bouwen onverhoopt niet bereikbaar
+> (of geeft de REST API een fout), dan valt de build automatisch terug op de
+> lokale Markdown-artikelen in plaats van te falen. In de bouwlog verschijnt dan
+> een waarschuwing `WordPress niet bereikbaar … Terugvallen op de lokale
+> Markdown-artikelen`. Zo blokkeert een tijdelijke CMS-storing nooit de deploy.
+
 ---
 
 ## 1. WordPress installeren op de hosting
@@ -186,7 +192,7 @@ tekst en velden over:
 | Categorie           | Categorie (kies uit de vaste lijst)              |
 | Hoofdtekst          | De editor (koppen, lijsten, tabellen)            |
 | Afbeelding          | **Uitgelichte afbeelding**                       |
-| Intro, In het kort, Bronnen, SEO-titel, Controledatum, Uitlichten | Blok **"Actueel — artikelgegevens"** onder de editor |
+| Intro, In het kort, Bronnen, SEO-titel, Controledatum, Uitlichten, CTA | Blok **"Actueel — artikelgegevens"** onder de editor |
 
 Houd de **slug gelijk** aan de oude bestandsnaam, dan blijven bestaande links en
 de SEO-waarde behouden.
@@ -217,6 +223,16 @@ de SEO-waarde behouden.
    - **In het kort** — de kernpunten, één per regel.
    - **Bronnen** — één per regel als `Naam | Titel | https://url`.
    - **Uitlichten** — aanvinken om het artikel groot bovenaan te tonen.
+   - **Oproep onderaan (CTA)** — laat de CTA-velden leeg voor de standaardoproep,
+     of vul een eigen titel, tekst, knoptekst en knoplink in. Vink **CTA
+     verbergen** aan om er onder dit artikel géén te tonen.
    - Overige velden zijn optioneel.
+
+> **Over de CTA (oproep onderaan).** Onder elk artikel staat standaard een
+> oproep om contact op te nemen. Vult u niets in, dan verschijnt automatisch de
+> standaardtekst. Wilt u voor een specifiek artikel een andere oproep of link
+> (bijv. naar `/diensten/`)? Vul dan de CTA-velden in het blok *"Actueel —
+> artikelgegevens"*. Alleen de ingevulde velden overschrijven de standaard; lege
+> velden blijven de standaard gebruiken.
 5. Klik op **Publiceren**. Bij automatische koppeling (Optie B) staat het
    artikel binnen enkele minuten online.
