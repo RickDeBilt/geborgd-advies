@@ -26,6 +26,12 @@ Zonder de omgevingsvariabele `WP_API_URL` werkt de site precies zoals voorheen
 op basis van de lokale Markdown-bestanden. Zodra `WP_API_URL` is ingesteld,
 komen de artikelen uit WordPress. Zo kun je rustig overstappen.
 
+> **Robuuste build.** Is WordPress tijdens het bouwen onverhoopt niet bereikbaar
+> (of geeft de REST API een fout), dan valt de build automatisch terug op de
+> lokale Markdown-artikelen in plaats van te falen. In de bouwlog verschijnt dan
+> een waarschuwing `WordPress niet bereikbaar … Terugvallen op de lokale
+> Markdown-artikelen`. Zo blokkeert een tijdelijke CMS-storing nooit de deploy.
+
 ---
 
 ## 1. WordPress installeren op de hosting
