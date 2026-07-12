@@ -150,27 +150,30 @@ export function wordpressLoader(options: WordPressLoaderOptions): Loader {
     name: "geborgd-advies-wordpress",
     async load(context: LoaderContext) {
       const { store, parseData, generateDigest, logger } = context;
-      logger.info(`Artikelen ophalen uit WordPress: ${options.endpoint}`);
+      logger.info(
+        `Artikelen samenvoegen: lokale Markdown + WordPress (${options.endpoint}).`,
+      );
 
+      // 1. De lokale Markdown-artikelen vormen de basis. Ze blijven staan tenzij
+      //    een WordPress-artikel met dezelfde slug ze overschrijft (WP wint).
+      await glob({
+        pattern: LOCAL_FALLBACK_PATTERN,
+        base: LOCAL_FALLBACK_BASE,
+      }).load(context);
+
+      // 2. WordPress ophalen en eroverheen leggen. Faalt dit, dan houden we de
+      //    lokale artikelen, zodat een CMS-storing de build nooit blokkeert.
       let posts: WpPost[];
       try {
         posts = await fetchAllPosts(options);
       } catch (error) {
-        // WordPress onbereikbaar of een API-fout mag de build niet laten falen:
-        // val terug op de lokale Markdown-artikelen, zodat de site altijd bouwt.
         const message = error instanceof Error ? error.message : String(error);
         logger.warn(
           `WordPress niet bereikbaar (${message}). ` +
-            `Terugvallen op de lokale Markdown-artikelen in ${LOCAL_FALLBACK_BASE}.`,
+            `Alleen de lokale Markdown-artikelen worden gebruikt.`,
         );
-        await glob({
-          pattern: LOCAL_FALLBACK_PATTERN,
-          base: LOCAL_FALLBACK_BASE,
-        }).load(context);
         return;
       }
-
-      store.clear();
 
       for (const post of posts) {
         const meta = post.meta ?? {};
@@ -222,7 +225,10 @@ export function wordpressLoader(options: WordPressLoaderOptions): Loader {
         });
       }
 
-      logger.info(`${posts.length} artikel(en) geladen uit WordPress.`);
+      logger.info(
+        `${posts.length} WordPress-artikel(en) samengevoegd met de lokale ` +
+          `Markdown-artikelen (WordPress wint bij dezelfde slug).`,
+      );
     },
   };
 }

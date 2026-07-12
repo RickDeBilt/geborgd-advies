@@ -22,15 +22,18 @@ Astro-site blijft.
 - Na een publicatie moet de site **opnieuw gebouwd** worden. Dat kan handmatig
   of automatisch (zie [Publiceren & herbouwen](#5-publiceren--herbouwen)).
 
-Zonder de omgevingsvariabele `WP_API_URL` werkt de site precies zoals voorheen
-op basis van de lokale Markdown-bestanden. Zodra `WP_API_URL` is ingesteld,
-komen de artikelen uit WordPress. Zo kun je rustig overstappen.
+Zonder de omgevingsvariabele `WP_API_URL` werkt de site op basis van de lokale
+Markdown-bestanden. Zodra `WP_API_URL` is ingesteld, worden de WordPress-artikelen
+**samengevoegd** met de lokale Markdown-artikelen: alles verschijnt op de site.
+Bestaat er een artikel met dezelfde slug in beide bronnen, dan **wint WordPress**.
+Zo kunnen de ontwikkelaar (artikelen in de code/repo) en de redacteur (artikelen
+in WordPress) naast elkaar werken zonder elkaar in de weg te zitten.
 
 > **Robuuste build.** Is WordPress tijdens het bouwen onverhoopt niet bereikbaar
-> (of geeft de REST API een fout), dan valt de build automatisch terug op de
-> lokale Markdown-artikelen in plaats van te falen. In de bouwlog verschijnt dan
-> een waarschuwing `WordPress niet bereikbaar … Terugvallen op de lokale
-> Markdown-artikelen`. Zo blokkeert een tijdelijke CMS-storing nooit de deploy.
+> (of geeft de REST API een fout), dan bouwt de site door met alléén de lokale
+> Markdown-artikelen in plaats van te falen. In de bouwlog verschijnt dan een
+> waarschuwing `WordPress niet bereikbaar … Alleen de lokale Markdown-artikelen
+> worden gebruikt`. Zo blokkeert een tijdelijke CMS-storing nooit de deploy.
 
 ---
 
